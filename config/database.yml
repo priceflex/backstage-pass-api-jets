@@ -1,0 +1,23 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8mb4
+  pool: <%= ENV["DB_POOL"] || 5  %>
+  database: <%= ENV['DB_NAME'] || 'backstage_pass_api_jets_development' %>
+  username: <%= ENV['DB_USER'] || 'root' %>
+  password: <%= ENV['DB_PASS'] %>
+  host: <%= ENV["DB_HOST"] %>
+  url: <%= ENV['DATABASE_URL'] %> # takes higher precedence than other settings
+  reconnect: true
+
+development:
+  <<: *default
+  database: <%= ENV['DB_NAME'] || 'backstage_pass_api_jets_development' %>
+
+test:
+  <<: *default
+  database: backstage_pass_api_jets_test
+
+production:
+  <<: *default
+  database: backstage_pass_api_jets_production
+  url: <%= ENV['DATABASE_URL'] %>
