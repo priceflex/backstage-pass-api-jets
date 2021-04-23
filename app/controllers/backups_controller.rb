@@ -9,7 +9,8 @@ class BackupsController < ApplicationController
     backstage.save
     
     #head :ok #Commented this out because jets uses rails 5
-    format.any { render :json => {:response => 'OK' },:status => 200}
+    render plain: "OK ", statsus: 200
+    #format.any { render :json => {:response => 'OK' },:status => 200}
 
   end
 
