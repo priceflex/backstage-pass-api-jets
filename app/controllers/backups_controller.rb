@@ -25,7 +25,8 @@ class BackupsController < ApplicationController
       :computer_score,
       :user_policy_updated,
       :computer_policy_updated,
-      :z2ls_version
+      :z2ls_version,
+      :reliability_score
     )
     backstage.insert_rows([ 
                           data[:computer_num],
@@ -52,7 +53,9 @@ class BackupsController < ApplicationController
                           data[:computer_score],
                           data[:uesr_policy_updated],
                           data[:computer_policy_updated],
-                          data[:z2ls_version]
+                          data[:z2ls_version],
+                          data[:reliability_score]
+
     ])
     backstage.save
     
