@@ -34,6 +34,9 @@ def insert_rows(column_data)
     # if no duplicates are found then add
     @worksheet.insert_rows(@worksheet.num_rows + 1, [column_data])
   else
+    # TODO: find the row and replace the data
+    index_to_update = @worksheet.rows.map {|a| a.first}.index(column_data.first)
+    @worksheet.update_cells(index_to_update+1,1[column_data])
     return false
   end
 end

@@ -24,3 +24,4 @@ group :test do
   gem 'capybara'
 end
 gem "google_drive"
+gem "pry"
